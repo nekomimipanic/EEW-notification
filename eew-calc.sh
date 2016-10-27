@@ -78,7 +78,10 @@ else
 		then
 	        if [ `cat /tmp/EQSP` != "1" ] || [ "$EEW" = "1" ]
 			then
-                        ./ALART $EQSIE2 $DATEDIST $EEW
+                        ./ALART $EQSIE2 $DATEDIST $EEW 
+			#閾値震度以上でALARTを実行
+			#なんか好きなものつくってください。
+			#DATEDISTは到達予想のUNIX時間なので各自演算して下さい。
 		        ##### DEBUG ######
 			echo "$EQSIE2 $DATEDIST $EEW"
 
@@ -87,4 +90,5 @@ else
 		fi
 	fi
 ./INT_SP $EQSIE2 $DATEDIST $EEW
+#閾値以下でもなんかしたいとき
 fi		
