@@ -56,6 +56,7 @@ else
 	EQEPL=`echo "a(sqrt($ART2) / sqrt(1 - $ART2)) * 6370 * 2" | bc -l`
 	EQLEN=`echo "scale=5; sqrt( $EQEPL ^ 2 + $EQDEP ^ 2 )" | bc -l`
 	EQSEQ=`echo "$EQLEN / 3.6" | bc -l`
+	########↑走時表から計算すべきだが仮実装…##########
 	EQSEQ=${EQSEQ%.*}
 	DATEEQ="${EQRAW:18:12}"
 	DATEEQ=`date -d "${DATEEQ:0:2}-${DATEEQ:2:2}-${DATEEQ:4:2} ${DATEEQ:6:2}:${DATEEQ:8:2}:${DATEEQ:10:2} JST" +%s`
