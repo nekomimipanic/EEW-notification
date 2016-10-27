@@ -5,7 +5,7 @@ eew-get.sh　新強震モニタを叩いてSignalNow形式っぽいものをは�
 
 eew-calc.sh　eew-ntf.shに叩かれて現地予測震度、到達予測時刻（UNIX時間）を任意のプログラムに投げる
 
-# インストールしておくべきもの
+## インストールしておくべきもの
 bash
 jq
 sed
