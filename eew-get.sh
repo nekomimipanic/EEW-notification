@@ -27,14 +27,14 @@ if [ "$PRMT" = "" ]
 	                EQR2+=( `echo ${EQR1[8]} | sed -e 's/^..//'` )
 	                EQR2+=( `echo "ND"${EQR1[11]}"0"` )
 	                EQR2+=( `printf %02d ${EQR1[10]}` )
-                        LATI=`echo "scale=0; ${EQR1[7]} * 10" | bc `
+                        LATI=`echo "scale=0; ${EQR1[7]} * 10" | bc`
                         EQR2+=( `echo "N"${LATI%.*}` )
-                        LNGI=`echo "scale=0; ${EQR1[3]} * 10" | bc `
+                        LNGI=`echo "scale=0; ${EQR1[3]} * 10" | bc`
                         EQR2+=( `echo "E"${LNGI%.*}` )
 	                KM=`echo ${EQR1[5]} |sed -e "s/km//"`
 	                EQR2+=( `printf %03d $KM` )
-	                MAG=`echo "scale=0; ${EQR1[9]} * 10" | bc | sed s/\.[0-9,]*$//g`
-	                EQR2+=( `printf %02d $MAG` )
+	                MAG=`echo "scale=0; ${EQR1[9]} * 10" | bc`
+	                EQR2+=( `printf %02d ${MAG%.*}` )
 	        	if [ "${EQR1[12]}" = "警報" ]
 			then
         		        EQR2+=( XXXXE )
