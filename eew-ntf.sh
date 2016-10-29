@@ -10,7 +10,7 @@ then
 elif [ "$RSLT" = "ERR" ]
 then
 	CHK="ERR"
-	while [ "$CHK" != "ERR" ]
+	while [ "$CHK" = "ERR" ]
 	do
 		echo -e "\e[31m"`date "+%Y/%m/%d %H:%M:%S"`" Connection Error!""\e[m"
 		CHK=`./eew-get.sh`
