@@ -1,7 +1,7 @@
 #!/bin/bash
 :
 EEWURL="http://www.kmoni.bosai.go.jp/new/webservice/hypo/eew/"`date "+%Y%m%d%H%M%S"`".json"
-EQGET=`wget $EEWURL --timeout=0 -q -O -`
+EQGET=`wget $EEWURL --timeout=1 -q -O -`
 PRMT=`echo $EQGET | jq -r .result.message`
 #echo $EQGET
 
